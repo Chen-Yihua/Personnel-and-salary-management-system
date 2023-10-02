@@ -1,0 +1,139 @@
+object FrmB01: TFrmB01
+  Left = -43
+  Height = 1009
+  Top = 165
+  Width = 1920
+  Caption = '員工查詢(B01)'
+  ClientHeight = 1009
+  ClientWidth = 1920
+  Color = 16447724
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label1: TLabel
+    Left = 328
+    Height = 50
+    Top = 96
+    Width = 160
+    Caption = '員工查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -40
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 208
+    Height = 25
+    Top = 264
+    Width = 189
+    Caption = '員工編號/員工姓名：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditQueryStr: TEdit
+    Left = 416
+    Height = 23
+    Top = 264
+    Width = 112
+    TabOrder = 0
+  end
+  object ButEid: TButton
+    Left = 240
+    Height = 25
+    Top = 352
+    Width = 128
+    Caption = '員工編號查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButEidClick
+    ParentFont = False
+    TabOrder = 1
+  end
+  object ButName: TButton
+    Left = 400
+    Height = 25
+    Top = 352
+    Width = 128
+    Caption = '員工姓名查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButNameClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object DBGrid1: TDBGrid
+    Left = 792
+    Height = 888
+    Top = 56
+    Width = 920
+    Color = 15324598
+    Columns = <    
+      item
+        Title.Caption = '員工編號'
+        Width = 60
+        FieldName = '員工編號'
+      end    
+      item
+        Title.Caption = '姓名'
+        Width = 70
+        FieldName = '姓名'
+      end    
+      item
+        Title.Caption = '身分證字號'
+        Width = 100
+        FieldName = '身分證字號'
+      end    
+      item
+        Title.Caption = '生日'
+        Width = 80
+        FieldName = '生日'
+      end    
+      item
+        Title.Caption = '性別'
+        Width = 50
+        FieldName = '性別'
+      end    
+      item
+        Title.Caption = '手機'
+        Width = 100
+        FieldName = '手機'
+      end    
+      item
+        Title.Caption = '電話'
+        Width = 100
+        FieldName = '電話'
+      end    
+      item
+        Title.Caption = '住家地址'
+        Width = 260
+        FieldName = '住家地址'
+      end    
+      item
+        Title.Caption = '在職狀況'
+        Width = 60
+        FieldName = '在職狀況'
+      end>
+    DataSource = Frm000.DataSourceEmployee
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 3
+  end
+end

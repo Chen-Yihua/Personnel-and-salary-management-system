@@ -1,0 +1,361 @@
+object FrmC05: TFrmC05
+  Left = 323
+  Height = 1018
+  Top = 64
+  Width = 1920
+  Caption = '請假處理(C05)'
+  ClientHeight = 1018
+  ClientWidth = 1920
+  Color = 16447724
+  Font.CharSet = CHINESEBIG5_CHARSET
+  Font.Height = -20
+  Font.Name = '微軟正黑體'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Font.Style = [fsBold]
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label4: TLabel
+    Left = 819
+    Height = 25
+    Top = 480
+    Width = 60
+    Caption = '狀態：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBGridPass: TDBGrid
+    Left = 1136
+    Height = 744
+    Top = 120
+    Width = 760
+    Color = 15324598
+    Columns = <    
+      item
+        Title.Caption = '員工編號'
+        Width = 60
+        FieldName = '員工編號'
+      end    
+      item
+        Title.Caption = '日期'
+        Width = 80
+        FieldName = '日期'
+      end    
+      item
+        Title.Caption = '員工姓名'
+        Width = 60
+        FieldName = '員工姓名'
+      end    
+      item
+        Title.Caption = '出缺勤狀況'
+        Width = 70
+        FieldName = '出缺勤狀況'
+      end    
+      item
+        Title.Caption = '上班時間'
+        Width = 130
+        FieldName = '上班時間'
+      end    
+      item
+        Title.Caption = '下班時間'
+        Width = 130
+        FieldName = '下班時間'
+      end    
+      item
+        Title.Caption = '假別'
+        Width = 50
+        FieldName = '假別'
+      end    
+      item
+        Title.Caption = '事由'
+        Width = 100
+        FieldName = '事由'
+      end    
+      item
+        Title.Caption = '狀態'
+        Width = 60
+        FieldName = '狀態'
+      end>
+    DataSource = Frm000.DataSourcePass
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -13
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
+    TabOrder = 0
+    OnCellClick = DBGridPassCellClick
+  end
+  object Label5: TLabel
+    Left = 880
+    Height = 50
+    Top = 128
+    Width = 160
+    Caption = '請假處理'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -40
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 816
+    Height = 25
+    Top = 334
+    Width = 100
+    Caption = '員工編號：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 816
+    Height = 25
+    Top = 406
+    Width = 100
+    Caption = '員工姓名：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditName: TEdit
+    Left = 928
+    Height = 25
+    Top = 406
+    Width = 88
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -13
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+  end
+  object EditEID: TEdit
+    Left = 928
+    Height = 25
+    Top = 334
+    Width = 88
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -13
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+  end
+  object ButtonUpdate: TButton
+    Left = 864
+    Height = 25
+    Top = 576
+    Width = 75
+    Caption = '修改'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButtonUpdateClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object ButtonFind: TButton
+    Left = 1040
+    Height = 25
+    Top = 334
+    Width = 75
+    Caption = '查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButtonFindClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object Label8: TLabel
+    Left = 816
+    Height = 25
+    Top = 264
+    Width = 60
+    Caption = '日期：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditDate: TEdit
+    Left = 928
+    Height = 25
+    Top = 264
+    Width = 88
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -13
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnChange = EditDateChange
+    OnClick = EditDateClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 928
+    Height = 25
+    Top = 240
+    Width = 99
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -13
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 6
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44915
+    Time = 0.022845474537462
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+    OnDblClick = DateTimePicker1DblClick
+  end
+  object ButtonClear: TButton
+    Left = 968
+    Height = 25
+    Top = 576
+    Width = 112
+    Caption = '清除輸入值'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButtonClearClick
+    ParentFont = False
+    TabOrder = 7
+  end
+  object DBGridNotPass: TDBGrid
+    Left = 32
+    Height = 742
+    Top = 120
+    Width = 760
+    Color = 15324598
+    Columns = <    
+      item
+        Title.Caption = '員工編號'
+        Width = 60
+        FieldName = '員工編號'
+      end    
+      item
+        Title.Caption = '日期'
+        Width = 80
+        FieldName = '日期'
+      end    
+      item
+        Title.Caption = '員工姓名'
+        Width = 60
+        FieldName = '員工姓名'
+      end    
+      item
+        Title.Caption = '出缺勤狀況'
+        Width = 70
+        FieldName = '出缺勤狀況'
+      end    
+      item
+        Title.Caption = '上班時間'
+        Width = 130
+        FieldName = '上班時間'
+      end    
+      item
+        Title.Caption = '下班時間'
+        Width = 130
+        FieldName = '下班時間'
+      end    
+      item
+        Title.Caption = '假別'
+        Width = 50
+        FieldName = '假別'
+      end    
+      item
+        Title.Caption = '事由'
+        Width = 100
+        FieldName = '事由'
+      end    
+      item
+        Title.Caption = '狀態'
+        Width = 60
+        FieldName = '狀態'
+      end>
+    DataSource = Frm000.DataSourceNotPass
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -13
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    ParentFont = False
+    TabOrder = 8
+    OnCellClick = DBGridNotPassCellClick
+  end
+  object RadioButton1: TRadioButton
+    Left = 928
+    Height = 29
+    Top = 472
+    Width = 80
+    Caption = '已通過'
+    TabOrder = 9
+  end
+  object RadioButton2: TRadioButton
+    Left = 928
+    Height = 29
+    Top = 504
+    Width = 80
+    Caption = '未通過'
+    TabOrder = 10
+  end
+end

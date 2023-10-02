@@ -1,0 +1,10 @@
+object FrmA02: TFrmA02
+  Left = 773
+  Height = 514
+  Top = 275
+  Width = 538
+  Caption = '登出(A02)'
+  FormStyle = fsMDIChild
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+end

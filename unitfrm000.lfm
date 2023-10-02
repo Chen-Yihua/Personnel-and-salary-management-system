@@ -1,0 +1,1887 @@
+object Frm000: TFrm000
+  Left = 304
+  Height = 1017
+  Top = 246
+  Width = 1920
+  Caption = '朵福人事薪資管理系統'
+  ClientHeight = 997
+  ClientWidth = 1920
+  Color = 16447724
+  FormStyle = fsMDIForm
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label1: TLabel
+    Left = 48
+    Height = 15
+    Top = 56
+    Width = 24
+    Caption = '員工'
+    ParentColor = False
+    Visible = False
+  end
+  object Label2: TLabel
+    Left = 48
+    Height = 15
+    Top = 239
+    Width = 36
+    Caption = '出缺勤'
+    ParentColor = False
+    Visible = False
+  end
+  object Label3: TLabel
+    Left = 64
+    Height = 15
+    Top = 768
+    Width = 24
+    Caption = '績效'
+    ParentColor = False
+    Visible = False
+  end
+  object Label4: TLabel
+    Left = 1019
+    Height = 15
+    Top = 64
+    Width = 24
+    Caption = '薪資'
+    ParentColor = False
+    Visible = False
+  end
+  object Label5: TLabel
+    Left = 1008
+    Height = 15
+    Top = 304
+    Width = 48
+    Caption = '生日禮金'
+    ParentColor = False
+    Visible = False
+  end
+  object Label6: TLabel
+    Left = 1008
+    Height = 15
+    Top = 496
+    Width = 48
+    Caption = '結婚禮金'
+    ParentColor = False
+    Visible = False
+  end
+  object Label7: TLabel
+    Left = 1011
+    Height = 15
+    Top = 704
+    Width = 48
+    Caption = '子女獎金'
+    ParentColor = False
+    Visible = False
+  end
+  object Label8: TLabel
+    Left = 84
+    Height = 15
+    Top = 592
+    Width = 60
+    Caption = '未通過名單'
+    ParentColor = False
+    Visible = False
+  end
+  object Label9: TLabel
+    Left = 82
+    Height = 15
+    Top = 664
+    Width = 60
+    Caption = '出缺勤名單'
+    ParentColor = False
+    Visible = False
+  end
+  object Label10: TLabel
+    Left = 896
+    Height = 120
+    Top = 336
+    Width = 192
+    Caption = '朵福'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -96
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    Left = -16
+    Height = 1050
+    Top = 0
+    Width = 1938
+    TabOrder = 0
+    OnClick = Panel1Click
+  end
+  object Label11: TLabel
+    Left = 624
+    Height = 120
+    Top = 528
+    Width = 768
+    Caption = '人事薪資管理系統'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -96
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object MSSQLConnectionEmployee: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    AfterConnect = MSSQLConnectionEmployeeAfterConnect
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionEmployee
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 208
+    Top = 40
+  end
+  object MainMenu1: TMainMenu
+    Left = 920
+    Top = 8
+    object A: TMenuItem
+      Caption = '系統(A)'
+      OnClick = AClick
+      object A01: TMenuItem
+        Caption = '登入(A01)'
+        OnClick = A01Click
+      end
+      object A02: TMenuItem
+        Caption = '登出(A02)'
+        Visible = False
+        OnClick = A02Click
+      end
+    end
+    object B: TMenuItem
+      Caption = '員工(B)'
+      Enabled = False
+      object B01: TMenuItem
+        Caption = '員工查詢(B01)'
+        Enabled = False
+        OnClick = B01Click
+      end
+      object B02: TMenuItem
+        Caption = '員工處理(B02)'
+        Enabled = False
+        OnClick = B02Click
+      end
+    end
+    object C: TMenuItem
+      Caption = '出缺勤(C)'
+      Enabled = False
+      object C01: TMenuItem
+        Caption = '出缺勤查詢(C01)'
+        Enabled = False
+        OnClick = C01Click
+      end
+      object C02: TMenuItem
+        Caption = '出缺勤處理(C02)'
+        Enabled = False
+        OnClick = C02Click
+      end
+      object C03: TMenuItem
+        Caption = '請假申請(C03)'
+        Enabled = False
+        OnClick = C03Click
+      end
+      object C04: TMenuItem
+        Caption = '請假查詢(C04)'
+        Enabled = False
+        OnClick = C04Click
+      end
+      object C05: TMenuItem
+        Caption = '請假處理(C05)'
+        Enabled = False
+        OnClick = C05Click
+      end
+    end
+    object D: TMenuItem
+      Caption = '薪資(D)'
+      Enabled = False
+      object D01: TMenuItem
+        Caption = '薪資查詢(D01)'
+        Enabled = False
+        OnClick = D01Click
+      end
+      object D02: TMenuItem
+        Caption = '薪資處理(D02)'
+        Enabled = False
+        OnClick = D02Click
+      end
+    end
+    object E: TMenuItem
+      Caption = '績效評估(E)'
+      Enabled = False
+      object E01: TMenuItem
+        Caption = '季度績效查詢(E01)'
+        Enabled = False
+        OnClick = E01Click
+      end
+      object E02: TMenuItem
+        Caption = '季度績效處理(E02)'
+        Enabled = False
+        OnClick = E02Click
+      end
+    end
+    object F: TMenuItem
+      Caption = '福利(F)'
+      Enabled = False
+      object F01: TMenuItem
+        Caption = '生日禮金查詢(F01)'
+        Enabled = False
+        OnClick = F01Click
+      end
+      object F02: TMenuItem
+        Caption = '生日禮金處理(F02)'
+        Enabled = False
+        OnClick = F02Click
+      end
+      object F03: TMenuItem
+        Caption = '結婚禮金申請(F03)'
+        Enabled = False
+        OnClick = F03Click
+      end
+      object F04: TMenuItem
+        Caption = '結婚禮金查詢(F04)'
+        Enabled = False
+        OnClick = F04Click
+      end
+      object F05: TMenuItem
+        Caption = '結婚禮金處理(F05)'
+        Enabled = False
+        OnClick = F05Click
+      end
+      object F06: TMenuItem
+        Caption = '子女獎金申請(F06)'
+        Enabled = False
+        OnClick = F06Click
+      end
+      object F07: TMenuItem
+        Caption = '子女獎金查詢(F07)'
+        Enabled = False
+        OnClick = F07Click
+      end
+      object F08: TMenuItem
+        Caption = '子女獎金處理(F08)'
+        Enabled = False
+        OnClick = F08Click
+      end
+    end
+  end
+  object SQLTransactionEmployee: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionEmployee
+    Left = 440
+    Top = 40
+  end
+  object SQLQueryEmployee: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '身分證字號'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '性別'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '手機'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '電話'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '住家地址'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '在職狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '密碼'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end>
+    Active = True
+    Database = MSSQLConnectionEmployee
+    Transaction = SQLTransactionEmployee
+    SQL.Strings = (
+      'select * from 員工資料;'
+    )
+    Params = <>
+    Macros = <>
+    Left = 616
+    Top = 44
+  end
+  object DataSourceEmployee: TDataSource
+    DataSet = SQLQueryEmployee
+    Left = 789
+    Top = 44
+  end
+  object MSSQLConnectionAttendence: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionAttendence
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 214
+    Top = 216
+  end
+  object SQLTransactionAttendence: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionAttendence
+    Left = 438
+    Top = 208
+  end
+  object SQLQueryAttendence: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '出缺勤狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '上班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '下班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '假別'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '事由'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionAttendence
+    Transaction = SQLTransactionAttendence
+    SQL.Strings = (
+      'select * from 出缺勤資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 614
+    Top = 208
+  end
+  object DataSourceAttendence: TDataSource
+    DataSet = SQLQueryAttendence
+    Left = 787
+    Top = 208
+  end
+  object MSSQLConnectionSQLScript: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionSQLScript
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 224
+    Top = 456
+  end
+  object SQLTransactionSQLScript: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionSQLScript
+    Left = 448
+    Top = 456
+  end
+  object SQLQueryScript: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '出缺勤狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '上班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '下班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '假別'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '事由'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionSQLScript
+    Transaction = SQLTransactionSQLScript
+    SQL.Strings = (
+      'select * from 出缺勤資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 624
+    Top = 456
+  end
+  object MSSQLConnectionPerformance: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionPerformance
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 224
+    Top = 752
+  end
+  object SQLTransactionPerformance: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionPerformance
+    Left = 448
+    Top = 744
+  end
+  object SQLQueryPerformance: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '年度'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '季度'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '員工銷售成果'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '銷售成果排名'
+        DataType = ftFloat
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionPerformance
+    Transaction = SQLTransactionPerformance
+    SQL.Strings = (
+      'select * from 績效資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 624
+    Top = 744
+  end
+  object DataSourcePerformance: TDataSource
+    DataSet = SQLQueryPerformance
+    Left = 797
+    Top = 744
+  end
+  object MSSQLConnectionSalary: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    AfterConnect = MSSQLConnectionSalaryAfterConnect
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionSalary
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 1179
+    Top = 40
+  end
+  object SQLTransactionSalary: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionSalary
+    Left = 1403
+    Top = 40
+  end
+  object SQLQuerySalary: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '發放日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '基本薪資'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '加薪或減薪'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '備註'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '實領薪資'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '發放狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionSalary
+    Transaction = SQLTransactionSalary
+    SQL.Strings = (
+      'select * from 薪資資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 1579
+    Top = 40
+  end
+  object DataSourceSalary: TDataSource
+    DataSet = SQLQuerySalary
+    Left = 1752
+    Top = 40
+  end
+  object MSSQLConnectionBirthday: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionBirthday
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 1179
+    Top = 288
+  end
+  object SQLTransactionBirthday: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionBirthday
+    Left = 1403
+    Top = 280
+  end
+  object SQLQueryBirthday: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '發放紀錄'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionBirthday
+    Transaction = SQLTransactionBirthday
+    SQL.Strings = (
+      'select * from 生日禮金資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 1579
+    Top = 280
+  end
+  object DataSourceBirthday: TDataSource
+    DataSet = SQLQueryBirthday
+    Left = 1752
+    Top = 280
+  end
+  object DataSourceWedding: TDataSource
+    DataSet = SQLQueryWedding
+    Left = 1755
+    Top = 480
+  end
+  object MSSQLConnectionChild: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionChild
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 1190
+    Top = 696
+  end
+  object SQLTransactionChild: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionChild
+    Left = 1411
+    Top = 680
+  end
+  object SQLQueryChild: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '子女獎金編號'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '子女姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '申請日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '核准狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '發放狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionChild
+    Transaction = SQLTransactionChild
+    SQL.Strings = (
+      'select * from 子女獎金資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 1587
+    Top = 680
+  end
+  object DataSourceChild: TDataSource
+    DataSet = SQLQueryChild
+    Left = 1763
+    Top = 688
+  end
+  object MSSQLConnectionPerformance1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionPerformance1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 232
+    Top = 848
+  end
+  object SQLTransactionPerformance1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionPerformance1
+    Left = 456
+    Top = 840
+  end
+  object SQLQueryPerformance1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '年度'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '季度'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '員工銷售成果'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '銷售成果排名'
+        DataType = ftFloat
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionPerformance1
+    Transaction = SQLTransactionPerformance1
+    SQL.Strings = (
+      'select * from 績效資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 632
+    Top = 840
+  end
+  object MSSQLConnectionSalary1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionSalary1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 1179
+    Top = 152
+  end
+  object SQLTransactionSalary1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionSalary1
+    Left = 1403
+    Top = 152
+  end
+  object SQLQuerySalary1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '發放日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '基本薪資'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '加薪或減薪'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '備註'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '實領薪資'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '發放狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionSalary1
+    Transaction = SQLTransactionSalary1
+    SQL.Strings = (
+      'select * from 薪資資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 1579
+    Top = 152
+  end
+  object MSSQLConnectionBirthday1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionBirthday1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 1179
+    Top = 384
+  end
+  object SQLTransactionBirthday1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionBirthday1
+    Left = 1403
+    Top = 376
+  end
+  object SQLQueryBirthday1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '發放紀錄'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionBirthday1
+    Transaction = SQLTransactionBirthday1
+    SQL.Strings = (
+      'select * from 生日禮金資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 1579
+    Top = 376
+  end
+  object SQLQueryWedding: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '結婚禮金編號'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '結婚日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '申請日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '核准狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '發放狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionWedding
+    Transaction = SQLTransactionWedding
+    SQL.Strings = (
+      'select * from 結婚禮金資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 1584
+    Top = 480
+  end
+  object SQLTransactionWedding: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionWedding
+    Left = 1408
+    Top = 480
+  end
+  object MSSQLConnectionWedding: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionWedding
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 1184
+    Top = 488
+  end
+  object SQLQueryWedding1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '結婚禮金編號'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '結婚日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '申請日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '核准狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '發放狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionWedding1
+    Transaction = SQLTransactionWedding1
+    SQL.Strings = (
+      'select * from 結婚禮金資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 1592
+    Top = 584
+  end
+  object SQLTransactionWedding1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionWedding1
+    Left = 1414
+    Top = 584
+  end
+  object MSSQLConnectionWedding1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionWedding1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 1190
+    Top = 592
+  end
+  object MSSQLConnectionChild1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionChild1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 1184
+    Top = 816
+  end
+  object SQLTransactionChild1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionChild1
+    Left = 1405
+    Top = 800
+  end
+  object SQLQueryChild1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '子女獎金編號'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '子女姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '申請日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '核准狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '發放狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionChild1
+    Transaction = SQLTransactionChild1
+    SQL.Strings = (
+      'select * from 子女獎金資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 1581
+    Top = 800
+  end
+  object MSSQLConnectionEmployee1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    AfterConnect = MSSQLConnectionEmployeeAfterConnect
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionEmployee1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 208
+    Top = 144
+  end
+  object SQLTransactionEmployee1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionEmployee1
+    Left = 440
+    Top = 144
+  end
+  object SQLQueryEmployee1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '身分證字號'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '生日'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '性別'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '手機'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '電話'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '住家地址'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '在職狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '密碼'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end>
+    Active = True
+    Database = MSSQLConnectionEmployee1
+    Transaction = SQLTransactionEmployee1
+    SQL.Strings = (
+      'select * from 員工資料;'
+      ''
+    )
+    Params = <>
+    Macros = <>
+    Left = 616
+    Top = 148
+  end
+  object DataSourceScript: TDataSource
+    DataSet = SQLQueryScript
+    Left = 797
+    Top = 456
+  end
+  object MSSQLConnectionSQLScript1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionSQLScript1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 212
+    Top = 520
+  end
+  object SQLTransactionSQLScript1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionSQLScript1
+    Left = 434
+    Top = 520
+  end
+  object SQLQueryScript1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '出缺勤狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '上班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '下班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '假別'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '事由'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionSQLScript1
+    Transaction = SQLTransactionSQLScript1
+    SQL.Strings = (
+      'select * from 出缺勤資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 610
+    Top = 520
+  end
+  object DataSourceScript1: TDataSource
+    DataSet = SQLQueryScript1
+    Left = 797
+    Top = 520
+  end
+  object MSSQLConnectionAttendence1: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionAttendence1
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 214
+    Top = 280
+  end
+  object SQLTransactionAttendence1: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionAttendence1
+    Left = 438
+    Top = 272
+  end
+  object SQLQueryAttendence1: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '出缺勤狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '上班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '下班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '假別'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '事由'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionAttendence1
+    Transaction = SQLTransactionAttendence1
+    SQL.Strings = (
+      'select * from 出缺勤資料'
+    )
+    Params = <>
+    Macros = <>
+    Left = 614
+    Top = 272
+  end
+  object DataSourceAttendence1: TDataSource
+    DataSet = SQLQueryAttendence1
+    Left = 787
+    Top = 272
+  end
+  object MSSQLConnectionNotPass: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionNotPass
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 212
+    Top = 584
+  end
+  object SQLTransactionNotPass: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionNotPass
+    Left = 436
+    Top = 584
+  end
+  object SQLQueryNotPass: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '出缺勤狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '上班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '下班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '假別'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '事由'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionNotPass
+    Transaction = SQLTransactionNotPass
+    SQL.Strings = (
+      'select * from 出缺勤資料  where 狀態=''未通過'''
+    )
+    Params = <>
+    Macros = <>
+    Left = 612
+    Top = 584
+  end
+  object DataSourceNotPass: TDataSource
+    DataSet = SQLQueryNotPass
+    Left = 799
+    Top = 584
+  end
+  object MSSQLConnectionPass: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionPass
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 210
+    Top = 656
+  end
+  object SQLTransactionPass: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionPass
+    Left = 434
+    Top = 656
+  end
+  object SQLQueryPass: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '日期'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '出缺勤狀況'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '上班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '下班時間'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = '假別'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '事由'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '狀態'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    Database = MSSQLConnectionPass
+    Transaction = SQLTransactionPass
+    SQL.Strings = (
+      'select * from 出缺勤資料  where 狀態=''已通過'''
+    )
+    Params = <>
+    Macros = <>
+    Left = 610
+    Top = 656
+  end
+  object DataSourcePass: TDataSource
+    DataSet = SQLQueryPass
+    Left = 797
+    Top = 656
+  end
+  object DataSourceSalary1: TDataSource
+    DataSet = SQLQuerySalary1
+    Left = 1744
+    Top = 152
+  end
+  object DataSourcePerformance1: TDataSource
+    DataSet = SQLQueryPerformance1
+    Left = 784
+    Top = 832
+  end
+  object MSSQLConnectionPerformance2: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = False
+    Password = 'erp2012'
+    Transaction = SQLTransactionPerformance2
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 232
+    Top = 936
+  end
+  object SQLTransactionPerformance2: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionPerformance2
+    Left = 456
+    Top = 928
+  end
+  object SQLQueryPerformance2: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '年度'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '季度'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '員工銷售成果'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '銷售成果排名'
+        DataType = ftFloat
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionPerformance2
+    Transaction = SQLTransactionPerformance2
+    SQL.Strings = (
+      'select * from 績效資料 order by 績效資料.銷售成果排名'
+    )
+    Params = <>
+    Macros = <>
+    Left = 634
+    Top = 928
+  end
+  object DataSourcePerformance2: TDataSource
+    DataSet = SQLQueryPerformance2
+    Left = 784
+    Top = 920
+  end
+  object MSSQLConnectionWork: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionWork
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 224
+    Top = 344
+  end
+  object SQLTransactionWork: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionWork
+    Left = 448
+    Top = 336
+  end
+  object SQLQueryWork: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '總天數'
+        Attributes = [faReadonly]
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionWork
+    Transaction = SQLTransactionWork
+    SQL.Strings = (
+      'select 員工編號,員工姓名 ,count(出缺勤狀況) as 總天數 from  出缺勤資料 where 出缺勤狀況=''出勤''  GROUP BY 員工編號,員工姓名'
+    )
+    Params = <>
+    Macros = <>
+    Left = 624
+    Top = 336
+  end
+  object DataSourceWork: TDataSource
+    DataSet = SQLQueryWork
+    Left = 799
+    Top = 336
+  end
+  object MSSQLConnectionSkipWork: TMSSQLConnection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'DwarfDataBase'
+    KeepConnection = True
+    Password = 'erp2012'
+    Transaction = SQLTransactionSkipWork
+    UserName = 'erpuser'
+    HostName = 'DESKTOP-ACSDML9\SQLEXPRESS'
+    Left = 224
+    Top = 408
+  end
+  object SQLTransactionSkipWork: TSQLTransaction
+    Active = True
+    Database = MSSQLConnectionSkipWork
+    Left = 448
+    Top = 400
+  end
+  object SQLQuerySkipWork: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = '員工編號'
+        DataType = ftFloat
+        Precision = -1
+      end    
+      item
+        Name = '員工姓名'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = '總天數'
+        Attributes = [faReadonly]
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Active = True
+    Database = MSSQLConnectionSkipWork
+    Transaction = SQLTransactionSkipWork
+    SQL.Strings = (
+      'select Distinct 員工編號,員工姓名 ,count(出缺勤狀況) as 總天數 from  出缺勤資料 where 出缺勤狀況=''缺勤'''
+      'GROUP BY 員工編號 ,員工姓名'
+    )
+    Params = <>
+    Macros = <>
+    Left = 624
+    Top = 400
+  end
+  object DataSourceSkipWork: TDataSource
+    DataSet = SQLQuerySkipWork
+    Left = 797
+    Top = 400
+  end
+  object DataSourceEmployee1: TDataSource
+    DataSet = SQLQueryEmployee1
+    Left = 789
+    Top = 144
+  end
+end

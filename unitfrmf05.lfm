@@ -1,0 +1,303 @@
+object FrmF05: TFrmF05
+  Left = -8
+  Height = 1009
+  Top = -8
+  Width = 1920
+  Caption = '結婚禮金處理(F05)'
+  ClientHeight = 1009
+  ClientWidth = 1920
+  Color = 16447724
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label2: TLabel
+    Left = 360
+    Height = 25
+    Top = 312
+    Width = 100
+    Caption = '員工編號：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 624
+    Height = 25
+    Top = 312
+    Width = 100
+    Caption = '員工姓名：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditEID: TEdit
+    Left = 480
+    Height = 25
+    Top = 312
+    Width = 80
+    TabOrder = 0
+  end
+  object EditEName: TEdit
+    Left = 744
+    Height = 25
+    Top = 312
+    Width = 80
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 484
+    Height = 50
+    Top = 208
+    Width = 240
+    Caption = '結婚禮金處理'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -40
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 360
+    Height = 25
+    Top = 408
+    Width = 100
+    Caption = '結婚日期：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 624
+    Height = 25
+    Top = 408
+    Width = 100
+    Caption = '申請日期：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ButUpdate: TButton
+    Left = 504
+    Height = 25
+    Top = 576
+    Width = 75
+    Caption = '修改'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButUpdateClick
+    ParentFont = False
+    TabOrder = 2
+  end
+  object ButDelete: TButton
+    Left = 624
+    Height = 25
+    Top = 576
+    Width = 75
+    Caption = '刪除'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButDeleteClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object DBGrid1: TDBGrid
+    Left = 960
+    Height = 200
+    Top = 312
+    Width = 553
+    Color = 15324598
+    Columns = <    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '結婚禮金編號'
+        Width = 80
+        FieldName = '結婚禮金編號'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '員工編號'
+        Width = 60
+        FieldName = '員工編號'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '員工姓名'
+        Width = 60
+        FieldName = '員工姓名'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '結婚日期'
+        Width = 80
+        FieldName = '結婚日期'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '申請日期'
+        Width = 80
+        FieldName = '申請日期'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '核准狀況'
+        Width = 80
+        FieldName = '核准狀況'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '發放狀況'
+        Width = 80
+        FieldName = '發放狀況'
+      end>
+    DataSource = Frm000.DataSourceWedding
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 4
+    OnCellClick = DBGrid1CellClick
+  end
+  object Label6: TLabel
+    Left = 360
+    Height = 25
+    Top = 480
+    Width = 100
+    Caption = '核准狀況：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditMApprovalstatus: TEdit
+    Left = 480
+    Height = 25
+    Top = 480
+    Width = 80
+    TabOrder = 5
+  end
+  object Label7: TLabel
+    Left = 624
+    Height = 25
+    Top = 480
+    Width = 100
+    Caption = '發放狀況：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditMDisstatus: TEdit
+    Left = 744
+    Height = 25
+    Top = 480
+    Width = 80
+    TabOrder = 6
+  end
+  object EditMarriage: TEdit
+    Left = 480
+    Height = 25
+    Top = 408
+    Width = 80
+    OnClick = EditMarriageClick
+    TabOrder = 7
+  end
+  object EditMApplyDate: TEdit
+    Left = 744
+    Height = 25
+    Top = 408
+    Width = 80
+    OnClick = EditMApplyDateClick
+    TabOrder = 8
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 480
+    Height = 25
+    Top = 384
+    Width = 99
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 9
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44913
+    Time = 0.95348228009243
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+    OnDblClick = DateTimePicker1DblClick
+  end
+  object DateTimePicker2: TDateTimePicker
+    Left = 744
+    Height = 25
+    Top = 384
+    Width = 99
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 10
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44913
+    Time = 0.953508865743061
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+    OnDblClick = DateTimePicker2DblClick
+  end
+end

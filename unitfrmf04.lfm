@@ -1,0 +1,439 @@
+object FrmF04: TFrmF04
+  Left = 99
+  Height = 798
+  Top = 154
+  Width = 1529
+  Caption = '結婚禮金查詢(F04)'
+  ClientHeight = 798
+  ClientWidth = 1529
+  Color = 16447724
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label1: TLabel
+    Left = 539
+    Height = 50
+    Top = 200
+    Width = 240
+    Caption = '結婚禮金查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -40
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 696
+    Height = 25
+    Top = 358
+    Width = 83
+    Caption = '查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = Button1Click
+    ParentFont = False
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 1032
+    Height = 264
+    Top = 256
+    Width = 528
+    Color = 15324598
+    Columns = <    
+      item
+        MinSize = 7
+        MaxSize = 133
+        Title.Caption = '結婚禮金編號'
+        Width = 80
+        FieldName = '結婚禮金編號'
+      end    
+      item
+        MinSize = 7
+        MaxSize = 133
+        Title.Caption = '員工編號'
+        Width = 67
+        FieldName = '員工編號'
+      end    
+      item
+        MinSize = 7
+        MaxSize = 133
+        Title.Caption = '員工姓名'
+        Width = 67
+        FieldName = '員工姓名'
+      end    
+      item
+        MinSize = 7
+        MaxSize = 133
+        Title.Caption = '結婚日期'
+        Width = 73
+        FieldName = '結婚日期'
+      end    
+      item
+        MinSize = 7
+        MaxSize = 133
+        Title.Caption = '申請日期'
+        Width = 73
+        FieldName = '申請日期'
+      end    
+      item
+        MinSize = 7
+        MaxSize = 133
+        Title.Caption = '核准狀況'
+        Width = 67
+        FieldName = '核准狀況'
+      end    
+      item
+        MinSize = 7
+        MaxSize = 133
+        Title.Caption = '發放狀況'
+        Width = 67
+        FieldName = '發放狀況'
+      end>
+    DataSource = Frm000.DataSourceWedding
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 1
+    OnCellClick = DBGrid1CellClick
+  end
+  object Label6: TLabel
+    Left = 376
+    Height = 25
+    Top = 360
+    Width = 140
+    Caption = '結婚禮金編號：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditAID: TEdit
+    Left = 536
+    Height = 23
+    Top = 360
+    Width = 96
+    TabOrder = 2
+  end
+  object Shape1: TShape
+    Left = 1032
+    Height = 288
+    Top = 552
+    Width = 528
+  end
+  object Label2: TLabel
+    Left = 1155
+    Height = 35
+    Top = 560
+    Width = 275
+    Caption = 'BIGMAN股份有限公司'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -27
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 1224
+    Height = 25
+    Top = 592
+    Width = 140
+    Caption = '結婚禮金申請單'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 1072
+    Height = 25
+    Top = 632
+    Width = 140
+    Caption = '結婚禮金編號：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Shape2: TShape
+    Left = 1062
+    Height = 165
+    Top = 664
+    Width = 477
+    OnChangeBounds = Shape2ChangeBounds
+  end
+  object Label5: TLabel
+    Left = 1096
+    Height = 25
+    Top = 704
+    Width = 100
+    Caption = '員工編號：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 1096
+    Height = 25
+    Top = 760
+    Width = 100
+    Caption = '員工姓名：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 1296
+    Height = 25
+    Top = 704
+    Width = 100
+    Caption = '結婚日期：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 1296
+    Height = 25
+    Top = 760
+    Width = 100
+    Caption = '申請日期：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label10: TLabel
+    Left = 376
+    Height = 25
+    Top = 432
+    Width = 100
+    Caption = '員工編號：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label11: TLabel
+    Left = 376
+    Height = 25
+    Top = 504
+    Width = 100
+    Caption = '員工姓名：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label12: TLabel
+    Left = 376
+    Height = 25
+    Top = 576
+    Width = 100
+    Caption = '結婚日期：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label13: TLabel
+    Left = 696
+    Height = 25
+    Top = 432
+    Width = 100
+    Caption = '申請日期：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditEID: TEdit
+    Left = 536
+    Height = 23
+    Top = 432
+    Width = 96
+    TabOrder = 3
+  end
+  object EditEName: TEdit
+    Left = 536
+    Height = 23
+    Top = 504
+    Width = 96
+    TabOrder = 4
+  end
+  object EditMarriage: TEdit
+    Left = 536
+    Height = 23
+    Top = 576
+    Width = 96
+    TabOrder = 5
+  end
+  object EditMApplyDate: TEdit
+    Left = 816
+    Height = 23
+    Top = 432
+    Width = 96
+    TabOrder = 6
+  end
+  object Label14: TLabel
+    Left = 696
+    Height = 25
+    Top = 504
+    Width = 100
+    Caption = '核准狀況：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label15: TLabel
+    Left = 696
+    Height = 25
+    Top = 576
+    Width = 100
+    Caption = '發放狀況：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditMApprovalstatus: TEdit
+    Left = 816
+    Height = 23
+    Top = 504
+    Width = 96
+    TabOrder = 7
+  end
+  object EditMDisstatus: TEdit
+    Left = 816
+    Height = 23
+    Top = 576
+    Width = 96
+    TabOrder = 8
+  end
+  object Label16: TLabel
+    Left = 1216
+    Height = 1
+    Top = 635
+    Width = 1
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label17: TLabel
+    Left = 1200
+    Height = 1
+    Top = 707
+    Width = 1
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label18: TLabel
+    Left = 1200
+    Height = 1
+    Top = 763
+    Width = 1
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label19: TLabel
+    Left = 1400
+    Height = 1
+    Top = 707
+    Width = 1
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label20: TLabel
+    Left = 1400
+    Height = 1
+    Top = 760
+    Width = 1
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+end

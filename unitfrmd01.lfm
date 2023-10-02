@@ -1,0 +1,271 @@
+object FrmD01: TFrmD01
+  Left = -2
+  Height = 1017
+  Top = 275
+  Width = 1814
+  Caption = '薪資查詢(D01)'
+  ClientHeight = 1017
+  ClientWidth = 1814
+  Color = 16447724
+  FormStyle = fsMDIChild
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object Label1: TLabel
+    Left = 400
+    Height = 50
+    Top = 144
+    Width = 160
+    Caption = '薪資查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -40
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label1Click
+  end
+  object Label2: TLabel
+    Left = 296
+    Height = 25
+    Top = 256
+    Width = 100
+    Caption = '員工編號：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditEID: TEdit
+    Left = 416
+    Height = 25
+    Top = 256
+    Width = 82
+    TabOrder = 0
+  end
+  object DBGridSalary: TDBGrid
+    Left = 896
+    Height = 800
+    Top = 104
+    Width = 890
+    Color = 15324598
+    Columns = <    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '員工編號'
+        FieldName = '員工編號'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '發放日期'
+        FieldName = '發放日期'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '員工姓名'
+        Width = 96
+        FieldName = '員工姓名'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '基本薪資'
+        FieldName = '基本薪資'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '加薪/減薪'
+        Width = 96
+        FieldName = '加薪/減薪'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '備註'
+        Width = 120
+        FieldName = '備註'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '實領薪資'
+        FieldName = '實領薪資'
+      end    
+      item
+        MinSize = 8
+        MaxSize = 160
+        Title.Caption = '發放狀況'
+        Width = 96
+        FieldName = '發放狀況'
+      end>
+    DataSource = Frm000.DataSourceSalary1
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 1
+  end
+  object Label4: TLabel
+    Left = 296
+    Height = 25
+    Top = 352
+    Width = 100
+    Caption = '發放日期：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object EditSDate: TEdit
+    Left = 416
+    Height = 25
+    Top = 352
+    Width = 82
+    OnClick = EditSDateClick
+    TabOrder = 2
+  end
+  object ButtonEID: TButton
+    Left = 568
+    Height = 25
+    Top = 256
+    Width = 126
+    Caption = '員工編號查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButtonEIDClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object Label5: TLabel
+    Left = 296
+    Height = 25
+    Top = 424
+    Width = 100
+    Caption = '發放狀況：'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object ButtonSDate: TButton
+    Left = 568
+    Height = 25
+    Top = 352
+    Width = 126
+    Caption = '發放日期查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButtonSDateClick
+    ParentFont = False
+    TabOrder = 4
+  end
+  object ButtonSituation: TButton
+    Left = 568
+    Height = 25
+    Top = 424
+    Width = 126
+    Caption = '發放狀況查詢'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButtonSituationClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object ButtonAll: TButton
+    Left = 736
+    Height = 25
+    Top = 104
+    Width = 126
+    Caption = '顯示全部'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -17
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    OnClick = ButtonAllClick
+    ParentFont = False
+    TabOrder = 6
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 416
+    Height = 25
+    Top = 328
+    Width = 99
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 7
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44919
+    Time = 0.969222893516417
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+    OnClick = DateTimePicker1Click
+  end
+  object RadioButton1: TRadioButton
+    Left = 416
+    Height = 29
+    Top = 424
+    Width = 82
+    Caption = '已發放'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 8
+  end
+  object RadioButton2: TRadioButton
+    Left = 416
+    Height = 29
+    Top = 456
+    Width = 82
+    Caption = '未發放'
+    Font.CharSet = CHINESEBIG5_CHARSET
+    Font.Height = -20
+    Font.Name = '微軟正黑體'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 9
+  end
+end
